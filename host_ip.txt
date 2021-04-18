@@ -1,0 +1,3 @@
+192.168.56.101 vagrant vagrant
+192.168.56.102 vagrant vagrant
+192.168.56.103 vagrant vagrant

@@ -1,0 +1,5 @@
+.vagrant/
+hadoop-2.8.5.tar.gz
+jdk-8u201-linux-x64.tar.gz
+largefile
+data/
