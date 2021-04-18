@@ -1,1 +1,3 @@
 *.sh text eol=lf
+host_ip.txt text eol=lf
+ip.txt text eol=lf
