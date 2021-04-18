@@ -48,21 +48,24 @@ sudo apt-get update
 
 #install except,use for ssh login without password
 sudo apt-get install tcl tk expect -y
-
+#install docker
+# sudo apt-get install docker.io -y
+# #install kubelet kubeadm kubectl
+# sudo apt-get install -y apt-transport-https ca-certificates curl
 SCRIPT
 
 
 Vagrant.configure("2") do |config|
-		# if Vagrant.has_plugin?("vagrant-proxyconf")
-		# config.proxy.http     = "https://192.168.0.2:7890/"
-		# config.proxy.https    = "https://192.168.0.2:7890/"
-		# config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
-		# end
+		if Vagrant.has_plugin?("vagrant-proxyconf")
+		config.proxy.http     = "https://192.168.1.4:7890/"
+		config.proxy.https    = "https://192.168.1.4:7890/"
+		config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+		end
 		(1..3).each do |i|
 		config.vm.define "node#{i}" do |node|
 	
 		# 设置虚拟机的Box
-		node.vm.box = "ubuntu/trusty64"
+		node.vm.box = "ubuntu/xenial64"
 		# 设置虚拟机的主机名
 		node.vm.hostname="node#{i}"
 		# 设置虚拟机的IP
